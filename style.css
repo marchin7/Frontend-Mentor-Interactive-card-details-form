@@ -111,12 +111,6 @@
     justify-content: center;
   }
 
-  .form-section {
-    padding-bottom: 32px;
-  }
-
-
-
   .card-back,
   .card-front {
     position: relative;
@@ -218,20 +212,9 @@
     margin-top: -4px;
   }
 
-  .exp-date {
-  }
-
-
   .cvc input {
     width: 164px;
   }
-  /*
-  .exp-date div {
-    display: flex;
-    justify-content: space-between;         probably not needed! ?
-  }
-
-  */
 
   .exp-date-month-input,
   .exp-date-year-input {
@@ -248,7 +231,7 @@
     font-size: 12px;
     letter-spacing: 2px;
     color: var(--clr-Very-dark-violet);
-    font-weight: 600;
+    font-weight: 500;
   }
 
   .confirm-btn,
@@ -373,6 +356,8 @@
     .card-front {
       width: 447px;
     }
+
+
 
 
 

@@ -1,14 +1,8 @@
 const form = document.getElementById('form');
 const thankSection = document.getElementById('thank-section');
-
 const confirmBtn = document.getElementById('confirm-btn');
 const continueBtn = document.getElementById('continue-btn');
-
 const formInputs = document.querySelectorAll('.form-input');
-
-
-/////////////////////////////////////////////////////////////////////////////////////
-
 
 const cardholderNameInput = document.getElementById('cardholder-name-input');
 const cardNumberInput = document.getElementById('card-number-input');
@@ -44,7 +38,7 @@ cvcInput.addEventListener('input', ()=>{
     cvcPrint.textContent = cvcInput.value;
 });
 
-//cardNumberInput.value = cardNumberInput.value.replace(/([0-9]{4})/g, '$1 ').replace(/\s/g, '').trim();  ||
+//  ||
 
 form.addEventListener('submit', (e)=>{
     e.preventDefault();  
@@ -75,7 +69,6 @@ function validateInputs(){
     }
 
     let maxExpYear = Number(currentYear) + 6;
-
 
     // cardholder name
 
@@ -183,7 +176,7 @@ function validateInputs(){
     function inputError(input, message){
         let errorMsg = input.nextElementSibling;
         input.classList.add('error');
-        input.classList.remove('success') ;  // needed???
+        input.classList.remove('success') ;  
         errorMsg.classList.add('error');
         errorMsg.innerText = message; 
     }
@@ -199,7 +192,7 @@ function validateInputs(){
         let errorMsg = expDateMonthInput.parentElement.lastElementChild;
         errorMsg.innerText = message;
         input.classList.add('error');
-        input.classList.remove('success');   // needed???
+        input.classList.remove('success');   
         errorMsg.classList.add('error');
     }
 
@@ -207,7 +200,7 @@ function validateInputs(){
         let errorMsg = expDateMonthInput.parentElement.lastElementChild;
         input.classList.remove('error');
         input.classList.add('success');
-        //errorMsg.classList.remove('error');  //?????????????????//
+        //errorMsg.classList.remove('error');  //??//
     }
 }
 
@@ -248,10 +241,6 @@ returnToFormSection();
 
 
 
-
-
-
-//console.log(hasErrorClass)
 
 
 
