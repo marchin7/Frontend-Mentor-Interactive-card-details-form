@@ -1,60 +1,37 @@
-
-/*
-  1. Use a more-intuitive box-sizing model.
-*/
 *, *::before, *::after {
     box-sizing: border-box;
   }
-  /*
-    2. Remove default margin
-  */
+
   * {
     margin: 0;
   }
-  /*
-    3. Allow percentage-based heights in the application
-  */
+
   html, body {
     height: 100%;
   }
-  /*
-    Typographic tweaks!
-    4. Add accessible line-height
-    5. Improve text rendering
-  */
+
   body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
   }
-  /*
-    6. Improve media defaults
-  */
+
   img, picture, video, canvas, svg {
     display: block;
     max-width: 100%;
     line-height: 0;
   }
-  /*
-    7. Remove built-in form typography styles
-  */
+
   input, button, textarea, select {
     font: inherit;
   }
-  /*
-    8. Avoid text overflows
-  */
+
   p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
   }
 
   :root {
-    /* Colors */
-    
-    /* Primary */
     --Linear-gradient: linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 52%, 56%));
     --clr-Red: hsl(0, 100%, 66%);
-    
-    /* Neutral */
     --clr-White: hsl(0, 0%, 100%);
     --clr-Light-grayish-violet: hsl(270, 3%, 87%);
     --clr-Dark-grayish-violet: hsl(279, 6%, 55%);
@@ -63,24 +40,24 @@
   
   body {
     font-family: space Grotesk, sans-serif;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 400;
     min-height: 100vh;
 
     background: url(images/bg-main-mobile.png);
     background-repeat: no-repeat;
-    background-size: 100% 240px;
+    background-size: 100% 15rem;
   }
 
   .form-input {
-    height: 45px;
-    border: 1px solid;
+    height: 2.8125rem;
+    border: 0.0625rem solid;
     border-color: var(--clr-Light-grayish-violet);
     color: var(--clr-Very-dark-violet);
     outline: none;
-    border-radius: 8px;
-    padding: 0px 16px;
-    margin-top: 4px;
+    border-radius: 0.5rem;
+    padding: 0rem 1rem;
+    margin-top: 0.25rem;
   }
 
   input::placeholder {
@@ -89,12 +66,12 @@
   }
 
   .form-input.success {
-    border: 1px solid hsl(270, 3%, 87%);
+    border: 0.0625rem solid hsl(270, 3%, 87%);
   }
 
   .form-input:focus {
-    border: double 1px transparent;
-    border-radius: 6px;
+    border: double 0.0625rem transparent;
+    border-radius: 0.375rem;
     background-image: linear-gradient(white, white),
     linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 52%, 56%));
     background-origin: border-box;
@@ -102,7 +79,7 @@
   }
 
   .form-input.error {
-    border: 1px solid hsl(0, 100%, 60%);
+    border: 0.0625rem solid hsl(0, 100%, 60%);
   }
 
   .cards-section,
@@ -114,72 +91,73 @@
   .card-back,
   .card-front {
     position: relative;
-    width: 285px;
-    border-radius: 9px;
-
-    -webkit-box-shadow: 23px 19px 111px -18px rgba(0,0,0,0.15);
-    -moz-box-shadow: 23px 19px 111px -18px rgba(0,0,0,0.15);
-    box-shadow: 23px 19px 111px -18px rgba(0,0,0,0.15);
+    width: 17.8125rem;
+    border-radius: 0.5625rem;
+    -webkit-box-shadow: 1.4375rem 1.1875rem 6.9375rem -1.125rem rgba(0,0,0,0.15);
+    -moz-box-shadow: 1.4375rem 1.1875rem 6.9375rem -1.125rem rgba(0,0,0,0.15);
+    box-shadow: 1.4375rem 1.1875rem 6.9375rem -1.125rem rgba(0,0,0,0.15);
   }
 
   .card-front {
-    margin-top: -67px;
+    margin-top: -4.1875rem;
   }
 
   .card-logo {
     position: absolute;
-    width: 52px;
-    top: 20px;
-    left: 20px;
+    width: 3.25rem;
+    top: 1.25rem;
+    left: 1.25rem;
   }
 
   .card-number-print {
     position: absolute;
-    font-size: 18px;
-    letter-spacing: 2px;
-    bottom: 45px;
-    left: 20px;
+    font-size: 1.125rem;
+    letter-spacing: 0.125rem;
+    bottom: 2.8125rem;
+    left: 1.25rem;
     color: var(--clr-White);
   }
 
   .cardholder-name-print {
     position: absolute;
-    font-size: 10px;
-    letter-spacing: 1px;
-    bottom: 18px;
-    left: 20px;
+    font-size: 0.625rem;
+    letter-spacing: 0.0625rem;
+    bottom: 1.125rem;
+    left: 1.25rem;
     color: var(--clr-White);
     text-transform: uppercase;
   }
 
   .exp-date-print {
     position: absolute;
-    font-size: 10px;
-    letter-spacing: 1px;
-    bottom: 18px;
-    right: 20px;
+    font-size: 0.625rem;
+    letter-spacing: 0.0625rem;
+    bottom: 1.125rem;
+    right: 1.25rem;
     color: var(--clr-White);
   }
 
   .card-back {
-    margin-top: 32px;
-    margin-left: 60px;
+    margin-top: 2rem;
+    margin-left: 3.75rem;
   }
 
   .cvc-print {
     position: absolute;
-    font-size: 10px;
+    font-size: 0.625rem;
     color: var(--clr-White);
-    letter-spacing: 1px;
+    letter-spacing: 0.0625rem;
     font-weight: 400;
-    top: 69px;
-    right: 36px;
+    top: 4.3125rem;
+    right: 2.25rem;
   }
 
   form {
-     width: 375px;
-     display: block;      /* *************** block */
-     margin-top: 32px;
+     width: 23.4375rem;
+     display: block;      
+     margin-top: 2rem;
+     animation-name: fade;
+     animation-duration: 2s;
   }
 
   form.hide {
@@ -192,15 +170,15 @@
     margin: 0;
     padding: 0;
     border: none;
-    padding: 24px;
+    padding: 1.5rem;
   }
 
   legend {
     position: absolute;
-    width: 1px;
-    height: 1px;
+    width: 0.0625rem;
+    height: 0.0625rem;
     padding: 0;
-    margin: -1px;
+    margin: -0.0625rem;
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     border: 0;
@@ -209,212 +187,199 @@
   .exp-date-cvc-container {
     display: flex;
     justify-content: space-between;
-    margin-top: -4px;
+    margin-top: -0.25rem;
   }
 
   .cvc input {
-    width: 164px;
+    width: 10.25rem;
   }
 
   .exp-date-month-input,
   .exp-date-year-input {
-    width: 72px;
+    width: 4.5rem;
   }
 
   .exp-date-month-input {
-    margin-right: 4px;
+    margin-right: 0.25rem;
   }
 
 
   label {
     text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 2px;
+    font-size: 13px;
+    letter-spacing: 0.125rem;
     color: var(--clr-Very-dark-violet);
     font-weight: 500;
   }
 
   .confirm-btn,
   .continue-btn {
-    height: 52px;
-    font-size: 18px;
+    height: 3.25rem;
+    font-size: 1.125rem;
     background-color: var(--clr-Very-dark-violet);
     color: var(--clr-White);
-    border-radius: 8px;
+    border-radius: 0.5rem;
     border: none;
     cursor: pointer;
     transition: opacity .15s ease-in-out;
-    margin-top: 6px;
-}
+    margin-top: 0.375rem;
+  }
 
   .confirm-btn:hover,
   .continue-btn:hover {
     opacity: 0.8; 
   }
 
-  .form-error-msg {
-    color: var(--clr-Red);
-    font-size: 11px;
-    margin-top: 4px;
-    opacity: 0;          /* ********* */
-  }
+.form-error-msg {
+  color: var(--clr-Red);
+  font-size: 0.6875rem;
+  margin-top: 0.25rem;
+  opacity: 0;          
+}
 
-  .form-error-msg.error {
-    opacity: 1;
-  }
+.form-error-msg.error {
+  opacity: 1;
+}
 
-  .error-msg-cvc.error {
-    opacity: 1;
-  }
+.error-msg-cvc.error {
+  opacity: 1;
+}
 
-  .thank-section {
-    display: none;      /* ********** block */
-    min-width: 375px;
-    animation-name: fade;
-    margin-top: 32px;
-    animation-duration: .6s;
-  }
+.thank-section {
+  display: none;      
+  min-width: 23.4375rem;
+  margin-top: 2rem;
+}
 
-  .thank-section.show {
+.thank-section.show {
     display: block;
-  }
+}
 
-  .thank-section-inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 25px 25px 40px 25px;
+.thank-section-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5625rem 1.5625rem 2.5rem 1.5625rem;
+}
 
-  }
+.thank-you-header {
+  text-transform: uppercase;
+  color: var(--clr-Very-dark-violet);
+  font-weight: normal;
+  font-size: 1.875rem;
+  letter-spacing: 0.125rem;
+  margin-top: 2rem;
+}
 
-  .thank-you-header {
-    text-transform: uppercase;
-    color: var(--clr-Very-dark-violet);
-    font-weight: normal;
-    font-size: 30px;
-    letter-spacing: 2px;
-    margin-top: 32px;
-  }
+.thank-you-paragraph {
+  color: var(--clr-Dark-grayish-violet);
+  font-size: 1.125rem;
+  margin-top: 0.625rem;
+  margin-bottom: 2.1875rem;
+}
 
-  .thank-you-paragraph {
-    color: var(--clr-Dark-grayish-violet);
-    font-size: 18px;
-    margin-top: 10px;
-    margin-bottom: 35px;
-  }
-
-  .continue-btn {
-    width: 100%;
-  }
-
+.continue-btn {
+  width: 100%;
+}
 
 
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 37.5rem) {
     body {
-      background-size: 100% 360px;
+      background-size: 100% 22.5rem;
     }
 
     form {
-      width: 430px;
+      width: 26.875rem;
     }
 
     .exp-date-month-input,
     .exp-date-year-input {
-      width: 80px;
+      width: 5rem;
     }
 
     .cvc input {
-      width: 192px;
+      width: 12rem;
     }
 
     .exp-date-month-input {
-      margin-right: 10px;
+      margin-right: 0.625rem;
     }
 
     form input {
-      margin-top: 7px;
+      margin-top: 0.4375rem;
     }
 
     .form-error-msg {
-      margin-bottom: 4.5px;
+      margin-bottom: 0.2813rem;
     }
 
     .confirm-btn {
-      margin-top: 14px;
+      margin-top: 0.875rem;
     }
 
     .exp-date-cvc-container {
-      margin-top: -7px;
+      margin-top: -0.4375rem;
     }
 
     .exp-date-cvc-container input {
-      margin-top: 5px !important;
+      margin-top: 0.3125rem !important;
     }
 
     .card-back,
     .card-front {
-      width: 447px;
+      width: 27.9375rem;
     }
 
-
-
-
-
-
-
-
-
-
+    label {
+      font-weight: 600;
+    }
 
     .card-logo {
       width: auto;
-      top: 28px;
-      left: 32px;
+      top: 1.75rem;
+      left: 2rem;
     }
   
     .card-number-print {
-      font-size: 28px;
-      letter-spacing: 3.4px;
-      bottom: 67px;
-      left: 32px;
+      font-size: 1.75rem;
+      letter-spacing: 0.2125rem;
+      bottom: 4.1875rem;
+      left: 2rem;
     }
   
     .cardholder-name-print {
-      font-size: 14px;
-      letter-spacing: 2px;
-      bottom: 24px;
-      left: 32px;
+      font-size: 0.875rem;
+      letter-spacing: 0.125rem;
+      bottom: 1.5rem;
+      left: 2rem;
     }
   
     .exp-date-print {
-      font-size: 14px;
-      letter-spacing: 2px;
-      bottom: 24px;
-      right: 32px;
+      font-size: 0.875rem;
+      letter-spacing: 0.125rem;
+      bottom: 1.5rem;
+      right: 2rem;
     }
   
     .card-back {
-      margin-top: 48px;
-      margin-left: 86px;
+      margin-top: 3rem;
+      margin-left: 5.375rem;
     }
   
     .cvc-print {
-      font-size: 14px;
-      top: 110px;
-      right: 57px;
-      letter-spacing: 2px;
+      font-size: 0.875rem;
+      top: 6.875rem;
+      right: 3.5625rem;
+      letter-spacing: 0.125rem;
     }
 
     .card-front {
-      margin-top: -107px;
+      margin-top: -6.6875rem;
     }
   }
 
-
-
-
-  @media only screen and (min-width: 1110px) {
+  @media only screen and (min-width: 69.375rem) {
     body {
       background-image: url(images/bg-main-desktop.png);
       background-size: 33.55% 100%;
@@ -426,7 +391,7 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      column-gap: 160px;
+      column-gap: 10rem;
     }
 
     .cards-container {
@@ -435,385 +400,123 @@
     }
 
     .card-front {
-      margin-top: 0px;
-      margin-right: 0px;
+      margin-top: 0rem;
+      margin-right: 0rem;
       transform: translateX(-8.5%);
     }
 
     .card-back {
-      margin-top: 37px;
-      margin-left: 0px;
+      margin-top: 2.3125rem;
+      margin-left: 0rem;
       transform: translateX(12.5%);
     }
 
     .form-section {
-      padding-bottom: 0px;
+      padding-bottom: 0rem;
     }
 
     fieldset {
-      padding-bottom: 56px;
+      padding-bottom: 3.5rem;
     }
 
     .thank-section {   
-      min-width: 430px;
+      min-width: 26.875rem;
     }
   }
 
+  /* Screens < 370px */
 
-  /* fewer than 375px */
-
-  @media only screen and (max-width: 370px) {
+  @media only screen and (max-width: 23.125rem) {
 
     body {
-      background-size: 100% 200px;
+      background-size: 100% 12.5rem;
     }
 
     form {
-      min-width: 280px;
+      min-width: 17.5rem;
     }
 
     .form-input {
-      font-size: 14px;
-      padding: 0px 12px;
+      font-size: 0.875rem;
+      padding: 0rem 0.75rem;
     }
 
     fieldset {
-      padding: 16px;
+      padding: 1rem;
     }
 
     .card-front,
     .card-back {
-      width: 250px;
+      width: 15.625rem;
       margin: 0;
     }
 
     .card-back {
-      margin-left: 20px;
-      margin-top: 20px;
+      margin-left: 1.25rem;
+      margin-top: 1.25rem;
     }
     
     .card-front {
-      margin-top: -56px;
+      margin-top: -3.5rem;
     }
 
     .card-logo {
-      width: 40px;
-      top: 14px;
-      left: 14px;
+      width: 2.5rem;
+      top: 0.875rem;
+      left: 0.875rem;
     }
 
     .card-number-print {
-      font-size: 16px;
-      letter-spacing: 2px;
-      bottom: 44px;
-      left: 14px;
+      font-size: 1rem;
+      letter-spacing: 0.125rem;
+      bottom: 2.75rem;
+      left: 0.875rem;
     }
   
     .cardholder-name-print {
-      font-size: 8px;
-      letter-spacing: 1.5px;
-      bottom: 16px;
-      left: 14px;
+      font-size: 0.5rem;
+      letter-spacing: 0.0938rem;
+      bottom: 1rem;
+      left: 0.875rem;
     }
   
     .exp-date-print {
-      font-size: 8px;
-      letter-spacing: 1.5px;
-      bottom: 16px;
-      right: 14px;
+      font-size: 0.5rem;
+      letter-spacing: 0.0938rem;
+      bottom: 1rem;
+      right: 0.875rem;
     }
 
     .cvc-print {
-      font-size: 8px;
-      top: 62px;
-      right: 32px;
-      letter-spacing: 1.5px;
+      font-size: 0.5rem;
+      top: 3.875rem;
+      right: 2rem;
+      letter-spacing: 0.0938rem;
     }
 
     .cvc {
-      margin-left: 0px;
+      margin-left: 0rem;
     }
 
     .cvc input {
       width: 100%;
-      min-width: 100px;
+      min-width: 6.25rem;
     }
 
     .exp-date-month-input,
     .exp-date-year-input {
-      min-width: 54px;
-      width: 54px;
+      min-width: 3.375rem;
+      width: 3.375rem;
     }
 
     label {
-      font-size: 8px;
+      font-size: 0.5rem;
     }
 
     .form-error-msg {
-      font-size: 9px;
+      font-size: 0.5625rem;
     }
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- /*
-
-  body {
-    font-family: space Grotesk, sans-serif;
-    font-weight: 400;
-    display: flex;
-    justify-content: center;
-
-  }
-
-  main {
-    width: 100%;
-  }
-
-
-  .images-section {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    background: url(images/bg-main-mobile.png);
-    background-repeat: no-repeat;
-    max-height: 240px;
-    object-fit: cover;
-    background-size: 100%;
-
-  }
-
-  .cards {
-    width: 285px;
-  }
-
-  .bank-cards {
-    min-width: 375px;
-
-  }
-
-  .card-back {
-    position: relative;
-    margin: 32px 0px 0px 72px;
-  }
-
-  .cvc {
-    position: absolute;
-    color: var(--clr-White);
-    font-size: 10px;
-    bottom: 71px;
-    right: 35px;
-    letter-spacing: 1px;
-  }
-
-  .card-front {
-    position: relative;
-    margin: -68px 0px 32px 16px;
-  }
-
-  .card-logo {
-    position: absolute;
-    width: 50px;
-    top: 20px;
-    left: 20px;
-  }
-
-  .card-number {
-    position: absolute;
-    color: var(--clr-White);
-    font-size: 18px;
-    letter-spacing: 2px;
-    bottom: 45px;
-    left: 20px;
-
-  }
-
-  .cardholder-name {
-    position: absolute;
-    color: var(--clr-White);
-    font-size: 10px;
-    letter-spacing: 1px;
-    bottom: 18px;
-    left: 20px;
-  }
-
-  .exp-date {
-    position: absolute;
-    color: var(--clr-White);
-    font-size: 10px;
-    letter-spacing: 1px;
-    bottom: 18px;
-    right: 20px;
-  }
-
-  .form-section {
-    display: flex;
-    justify-content: center;
-    margin-top: 60px;
-  }
-
-
-  form {
-    width: 375px;
-    display: flex;
-    flex-direction: column;
-    padding: 25px 25px 40px 25px;
-    display: flex;               
-    animation-name: fade;
-    animation-duration: .6s;
-  }
-
-  .form-input {
-    border: 1px solid hsl(270, 3%, 87%);
-    border-radius: 8px;
-    height: 45px;
-    padding: 0px 16px;
-    font-size: 18px;
-    outline-color: var(--clr-Red);
-  }
-
-  .form-input.active {  
-    border: double 1px transparent;
-    border-radius: 6px;
-    background-image: linear-gradient(white, white),
-    linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 52%, 56%));
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
-  }
-
-  .form-input::placeholder {
-    color: var(--clr-Dark-grayish-violet);
-    opacity: 0.6;
-    font-size: 18px;
-  }
-
-  label {
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 2px;
-    margin: 2px 0px 4px 0px;
-  }
-
-  .form-error-msg {
-    color: var(--clr-Red);
-    font-size: 11px;
-    margin-top: 3px;
-    opacity: 0;
-  }
-
-  .form-exp-date-cvc {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .form-exp-date,
-  .form-exp-cvc {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .input-exp-date {
-    width: 75px !important;
-  }
-
-  .input-exp-date-month {
-    margin-right: 8px;
-  }
-
-  .input-cvc {
-    width: 150px !important;
-  }
-
-  .confirm-btn,
-  .continue-btn {
-    height: 55px;
-    font-size: 18px;
-    background-color: var(--clr-Very-dark-violet);
-    color: var(--clr-White);
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    transition: opacity .2s ease-in-out;
-    margin-top: 12px;
-  }
-
-  .continue-btn {
-    width: 100%;
-  }
-
-  .confirm-btn:hover,
-  .continue-btn:hover {
-    opacity: 0.8;
-  }
-
-  .thank-section {
-    width: 100%;
-    display: none;         
-    animation-name: fade;
-    animation-duration: .6s;
-  }
-
-  .thank-section-inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 25px 40px 25px;
-
-  }
-
-  .thank-you-header {
-    text-transform: uppercase;
-    color: var(--clr-Very-dark-violet);
-    font-weight: normal;
-    font-size: 30px;
-    letter-spacing: 2px;
-    margin-top: 32px;
-  }
-
-  .thank-you-paragraph {
-    color: var(--clr-Dark-grayish-violet);
-    font-size: 18px;
-    margin-top: 10px;
-    margin-bottom: 35px;
-  }
-
-  @keyframes fade {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-
-  @media only screen and (min-width: 900px){
-    body {
-      background-color: darkseagreen;
-    }
-  }
-
-  */
-
-  
-
-
-
-
 
 
 

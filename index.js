@@ -16,9 +16,19 @@ const expDateMonthPrint = document.getElementById('exp-date-month-print');
 const expDateYearPrint = document.getElementById('exp-date-year-print');
 const cvcPrint = document.getElementById('cvc-print');
 
+function capitalizeInputValue(){
+    let cardholderNameInputValue = cardholderNameInput.value
+    let words = cardholderNameInputValue.split(" ").map(word =>{
+        return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+
+    words = words.join(" ");
+    cardholderNameInput.value = words;  
+};        
 
 cardholderNameInput.addEventListener('input', ()=>{
     cardholderNamePrint.textContent = cardholderNameInput.value;
+    capitalizeInputValue()
 });
 
 cardNumberInput.addEventListener('input', ()=>{
@@ -38,16 +48,13 @@ cvcInput.addEventListener('input', ()=>{
     cvcPrint.textContent = cvcInput.value;
 });
 
-//  ||
-
 form.addEventListener('submit', (e)=>{
     e.preventDefault();  
-    validateInputs()
-    confirmForm()
+    validateInputs();
+    confirmForm();
 });
 
 function validateInputs(){
-
     let cardholderNameInputValue = cardholderNameInput.value.trim();
     let cardNumberInputValue = cardNumberInput.value.trim();
     let expDateMonthInputValue = expDateMonthInput.value.trim();
@@ -56,7 +63,7 @@ function validateInputs(){
 
     cardNumberInputValue = cardNumberInputValue.replace(/([0-9]{4})/g, '$1 ').replace(/\s/g, '').trim();
 
-    const cardholderNameRegExp = /^[a-zA-Z]+ [a-zA-Z]+$/;
+    const cardholderNameRegExp = /^[A-z\.]*\s?([A-z\-\']+\s)+[A-z\-\']+$/;
     const numbersOnlyRegExp = /^[0-9]*$/;
 
     const year = new Date().getFullYear().toString();
@@ -70,21 +77,21 @@ function validateInputs(){
 
     let maxExpYear = Number(currentYear) + 6;
 
-    // cardholder name
+    // validate cardholder name
 
     if(cardholderNameInputValue === ''){
         inputError(cardholderNameInput, "Can't be blank")
     }
 
     else if(!cardholderNameRegExp.test(cardholderNameInputValue)){
-        inputError(cardholderNameInput, "Cardholder name is not valid")
+        inputError(cardholderNameInput, "Name is not valid")
     }
 
     else{
         inputSuccess(cardholderNameInput)
     }
 
-    // card number
+    // validate card number
 
     if(cardNumberInputValue === ''){
         inputError(cardNumberInput, "Can't be blank")
@@ -102,7 +109,7 @@ function validateInputs(){
         inputSuccess(cardNumberInput)
     }
 
-    // exp date year
+    // validate exp date year
 
     if(expDateYearInputValue === ''){
         inputError(expDateYearInput, "Can't be blank")
@@ -121,14 +128,14 @@ function validateInputs(){
     }
 
     else if(expDateYearInputValue > maxExpYear){
-        inputError(expDateYearInput, "Can't be valid that long")
+        inputError(expDateYearInput, "Invalid year!")
     }
 
     else{
         inputSuccess(expDateYearInput)
     }
 
-    // cvc
+    // validate cvc
 
     if(cvcInputValue === ''){
         inputError(cvcInput, "Can't be blank")
@@ -146,7 +153,7 @@ function validateInputs(){
         inputSuccess(cvcInput)
     }
 
-    // exp date month
+    // validate exp date month
 
     if(expDateMonthInputValue === ''){
         expDateMonthInputError(expDateMonthInput, "Can't be blank")
@@ -157,20 +164,19 @@ function validateInputs(){
     }
 
     else if(expDateMonthInputValue.length !== 2){
-        expDateMonthInputError(expDateMonthInput, "must be 2 digits long")
+        expDateMonthInputError(expDateMonthInput, "Must be 2 digits long")
     }
 
-    else if(expDateMonthInputValue > 12 || expDateMonthInputValue[0] > 1 || expDateMonthInputValue == '00'){    // 
+    else if(expDateMonthInputValue > 12 || expDateMonthInputValue[0] > 1 || expDateMonthInputValue == '00'){    
         expDateMonthInputError(expDateMonthInput, "Must be between 01-12")
     }
 
-    else if(expDateYearInputValue == currentYear && expDateMonthInputValue < currentMonth){    // 
+    else if(expDateYearInputValue == currentYear && expDateMonthInputValue < currentMonth){     
         expDateMonthInputError(expDateMonthInput, "Card is expired!")
     }
 
     else{
         expDateMonthInputSuccess(expDateMonthInput)
-        //errorMsg.classList.remove('error')
     }
 
     function inputError(input, message){
@@ -200,9 +206,8 @@ function validateInputs(){
         let errorMsg = expDateMonthInput.parentElement.lastElementChild;
         input.classList.remove('error');
         input.classList.add('success');
-        //errorMsg.classList.remove('error');  //??//
     }
-}
+};
 
 formInputs.forEach(input=>{
     input.addEventListener('input', ()=>{
@@ -216,28 +221,29 @@ function confirmForm(){
     const formInputsArr = Array.from(formInputs);
 
     const hasSuccessClass = formInputsArr.every((item)=>{
-        return item.classList.contains('success')
+        return item.classList.contains('success');
     })
 
     const hasErrorClass = formInputsArr.every((item)=>{
-        return item.classList.contains('error')
+        return item.classList.contains('error');
     })
 
     if(hasSuccessClass === true && hasErrorClass === false){
         form.classList.add('hide');
-        thankSection.classList.add('show')
+        thankSection.classList.add('show');
     }
-}
+};
 
-function returnToFormSection(){
     continueBtn.addEventListener('click', ()=>{
-        //form.classList.remove('hide');
-        //thankSection.classList.remove('show')
         location.reload();
-    })
-}
+});
 
-returnToFormSection();
+
+
+
+
+
+
 
 
 
