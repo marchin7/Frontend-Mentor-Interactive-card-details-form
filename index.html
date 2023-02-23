@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
@@ -39,7 +40,7 @@
     <div class="form-section">
       <form id="form">
         <fieldset>
-          <legend>Enter card details</legend>
+          <legend class="sr-only">Enter card details</legend>
           <label for="cardholder-name-input">cardholder name</label>
           <input type="text" placeholder="e.g. Jane Appleseed" class="form-input" id="cardholder-name-input" maxlength="30">
           <span class="form-error-msg">Can't be blank</span>
