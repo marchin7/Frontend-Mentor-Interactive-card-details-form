@@ -215,5 +215,5 @@ function confirmForm() {
 }
 
 continueBtn.addEventListener("click", () => {
-    location.reload();
+    window.location.href = window.location;
 });
