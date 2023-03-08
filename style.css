@@ -69,6 +69,17 @@ body {
     background-size: 100% 15rem;
 }
 
+.sr-only {
+    position: absolute !important;
+    width: 0.0625rem !important;
+    height: 0.0625rem !important;
+    padding: 0 !important;
+    margin: -0.0625rem !important;
+    overflow: hidden !important;
+    clip: rect(0,0,0,0) !important;
+    border: 0 !important;
+  }
+
 .form-input {
     height: 2.8125rem;
     border: 0.0625rem solid;
@@ -113,9 +124,9 @@ input::placeholder {
     position: relative;
     width: 17.8125rem;
     border-radius: 0.5625rem;
-    -webkit-box-shadow: 1.4375rem 1.1875rem 6.9375rem -1.125rem rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 1.4375rem 1.1875rem 6.9375rem -1.125rem rgba(0, 0, 0, 0.15);
-    box-shadow: 1.4375rem 1.1875rem 6.9375rem -1.125rem rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 10px 40px 90px -18px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 10px 40px 90px -18px rgba(0, 0, 0, 0.2);
+    box-shadow: 10px 40px 90px -18px rgba(0, 0, 0, 0.2);
 }
 
 .card-front {
@@ -193,15 +204,15 @@ fieldset {
     padding: 1.5rem;
 }
 
-legend {
-    position: absolute;
-    width: 0.0625rem;
-    height: 0.0625rem;
-    padding: 0;
-    margin: -0.0625rem;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+.sr-only {
+    position: absolute !important;
+    width: 0.0625rem !important;
+    height: 0.0625rem !important;
+    padding: 0 !important;
+    margin: -0.0625rem !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    border: 0 !important;
 }
 
 .exp-date-cvc-container {
@@ -301,6 +312,7 @@ label {
 .continue-btn {
     width: 100%;
 }
+
 
 @media only screen and (min-width: 37.5rem) {
     body {
