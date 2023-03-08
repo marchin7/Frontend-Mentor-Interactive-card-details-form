@@ -76,9 +76,9 @@ body {
     padding: 0 !important;
     margin: -0.0625rem !important;
     overflow: hidden !important;
-    clip: rect(0,0,0,0) !important;
+    clip: rect(0, 0, 0, 0) !important;
     border: 0 !important;
-  }
+}
 
 .form-input {
     height: 2.8125rem;
@@ -301,7 +301,6 @@ label {
 .continue-btn {
     width: 100%;
 }
-
 
 @media only screen and (min-width: 37.5rem) {
     body {
